@@ -1,15 +1,15 @@
 
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { LoginMenu, LogoutMenu, FriendList, RecentPlayed, LoginForm, CreatAccount, ForgetPassword, Game,  } from "../";
+import { LoginMenu, LogoutMenu, FriendList, RecentPlayed, LoginForm, CreatAccount, ForgetPassword, Game, MainGame } from "../";
 
 const Stack = createStackNavigator();
 
 const Navigation = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName={'Game'}
+            <Stack.Navigator initialRouteName={'LogoutMenu'}
                 screenOptions={{
                     headerShown: false
                 }}>

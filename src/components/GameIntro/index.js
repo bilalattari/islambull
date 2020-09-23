@@ -6,8 +6,8 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { MainGame } from "../";
 const GameIntro = ({ navigation }) => {
     const [counterValue, setcounterValue] = useState('!')
-    const [introviewdisplaynone, setintroviewdisplaynone] = useState(false)
-    const [mainGameViewDisplay, setmainGameViewDisplay] = useState(true)
+    const [introviewdisplaynone, setintroviewdisplaynone] = useState(true)
+    const [mainGameViewDisplay, setmainGameViewDisplay] = useState(false)
     const counterScale = new Animated.Value(1);
     const translateIntroX = new Animated.Value(400); //400
     const backgroundImageOpacity = new Animated.Value(1);
@@ -245,7 +245,7 @@ const GameIntro = ({ navigation }) => {
     }
 
     if (counterValue === '!') {
-        // introAnimation();
+        introAnimation();
     }
 
     // translateUserImageXAnimationFinish();
@@ -291,7 +291,7 @@ const GameIntro = ({ navigation }) => {
             }
             {
                 mainGameViewDisplay ?
-                    <MainGame /> : null
+                    <MainGame navigation={navigation}/> : null
             }
 
         </View>
@@ -299,7 +299,7 @@ const GameIntro = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-    main: { alignItems: 'center', flex: 1, },
+    main: { flex: 1, },
     animatedmain: { alignItems: 'center', flex: 1, },
     imgview: { flex: 1, position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, },
     image: { width: '100%', height: '100%', resizeMode: "stretch", opacity: 1, },
